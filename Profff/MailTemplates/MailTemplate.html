@@ -1,0 +1,480 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="utf-8"> <!-- utf-8 works for most cases -->
+    <meta name="viewport" content="width=device-width"> <!-- Forcing initial-scale shouldn't be necessary -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Use the latest (edge) version of IE rendering engine -->
+    <meta name="x-apple-disable-message-reformatting">  <!-- Disable auto-scale in iOS 10 Mail entirely -->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <title></title> <!-- The title tag shows in email notifications, like Android 4.4. -->
+    <!-- Web Font / @font-face : BEGIN -->
+    <!-- NOTE: If web fonts are not required, lines 10 - 27 can be safely removed. -->
+    <!-- Desktop Outlook chokes on web font references and defaults to Times New Roman, so we force a safe fallback font. -->
+    <!--[if mso]>
+        <style>
+            * {
+                font-family: sans-serif !important;
+            }
+        </style>
+    <![endif]-->
+    <!-- All other clients get the webfont reference; some will render the font and others will silently fail to the fallbacks. More on that here: http://stylecampaign.com/blog/2015/02/webfont-support-in-email/ -->
+    <!--[if !mso]><!-->
+    <!-- insert web font reference, eg: <link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'> -->
+    <!--<![endif]-->
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i'
+          rel='stylesheet' type='text/css'>
+    <!-- Web Font / @font-face : END -->
+    <!-- CSS Reset -->
+    <style>
+        /* What it does: Remove spaces around the email design added by some email clients. */
+        /* Beware: It can remove the padding / margin and add a background color to the compose a reply window. */
+        html,
+        body {
+            margin: 0 auto !important;
+            padding: 0 !important;
+            height: 100% !important;
+            width: 100% !important;
+        }
+
+        /* What it does: Stops email clients resizing small text. */
+        * {
+            -ms-text-size-adjust: 100%;
+            -webkit-text-size-adjust: 100%;
+        }
+
+        /* What is does: Centers email on Android 4.4 */
+        div[style*="margin: 16px 0"] {
+            margin: 0 !important;
+        }
+
+        /* What it does: Stops Outlook from adding extra spacing to tables. */
+        table,
+        td {
+            mso-table-lspace: 0pt !important;
+            mso-table-rspace: 0pt !important;
+        }
+
+        /* What it does: Fixes webkit padding issue. Fix for Yahoo mail table alignment bug. Applies table-layout to the first 2 tables then removes for anything nested deeper. */
+        table {
+            border-spacing: 0 !important;
+            border-collapse: collapse !important;
+            table-layout: fixed !important;
+            margin: 0 auto !important;
+        }
+
+            table table table {
+                table-layout: auto;
+            }
+
+        /* What it does: Uses a better rendering method when resizing images in IE. */
+        img {
+            -ms-interpolation-mode: bicubic;
+        }
+
+        /* What it does: A work-around for iOS meddling in triggered links. */
+        *[x-apple-data-detectors] {
+            color: inherit !important;
+            text-decoration: none !important;
+        }
+
+        /* What it does: A work-around for Gmail meddling in triggered links. */
+        .x-gmail-data-detectors,
+        .x-gmail-data-detectors *,
+        .aBn {
+            border-bottom: 0 !important;
+            cursor: default !important;
+        }
+
+        /* What it does: Prevents Gmail from displaying an download button on large, non-linked images. */
+        .a6S {
+            display: none !important;
+            opacity: 0.01 !important;
+        }
+        /* If the above doesn't work, add a .g-img class to any image in question. */
+        img.g-img + div {
+            display: none !important;
+        }
+
+        /* What it does: Prevents underlining the button text in Windows 10 */
+        .button-link {
+            text-decoration: none !important;
+        }
+
+        /* What it does: Removes right gutter in Gmail iOS app: https://github.com/TedGoas/Cerberus/issues/89  */
+        /* Create one of these media queries for each additional viewport size you'd like to fix */
+        /* Thanks to Eric Lepetit @ericlepetitsf) for help troubleshooting */
+        @media only screen and (min-device-width: 375px) and (max-device-width: 413px) { /* iPhone 6 and 6+ */
+            .email-container {
+                min-width: 375px !important;
+            }
+        }
+    </style>
+    <!-- CSS Reset: END-->
+    <!-- Progressive Enhancements: START -->
+    <style>
+        /* What it does: Hover styles for buttons */
+        .button-td,
+        .button-a {
+            transition: all 100ms ease-in;
+        }
+
+            .button-td:hover,
+            .button-a:hover {
+                background: #555555 !important;
+                border-color: #555555 !important;
+            }
+
+
+        /* PROFFF SETTINGS*/
+
+        h1, h2, h3, h4, h5, li, p {
+            color: #97460a;
+        }
+
+        @media screen and (max-width: 480px) {
+
+            /* What it does: Forces elements to resize to the full width of their container.
+                Useful for resizing images beyond their max-width. */
+            .fluid {
+                width: 100% !important;
+                max-width: 100% !important;
+                height: auto !important;
+                margin-left: auto !important;
+                margin-right: auto !important;
+                padding-left: 10px !important;
+                padding-right: 10px !important;
+            }
+
+            /* What it does: Forces table cells into full-width rows. */
+            .stack-column,
+            .stack-column-center {
+                display: block !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                direction: ltr !important;
+            }
+            /* And center justify these ones. */
+            .stack-column-center {
+                text-align: center !important;
+            }
+
+            /* What it does: Generic utility class for centering. Useful for images, buttons, and nested tables. */
+            .center-on-narrow {
+                text-align: center !important;
+                display: block !important;
+                margin-left: auto !important;
+                margin-right: auto !important;
+                float: none !important;
+            }
+
+            table.center-on-narrow {
+                display: inline-block !important;
+            }
+
+            a, .wordBreak {
+                /* Warning: Needed for oldIE support, but words are broken up letter-by-letter */
+                -ms-word-break: break-all;
+                word-break: break-all;
+                /* Non standard for webkit */
+                word-break: break-word;
+                -webkit-hyphens: auto;
+                -moz-hyphens: auto;
+                -ms-hyphens: auto;
+                hyphens: auto;
+            }
+        }
+    </style>
+    <!-- Progressive Enhancements: END -->
+
+</head>
+
+<body width="100%" bgcolor="#ffffff" style="margin: 0; mso-line-height-rule: exactly;">
+
+    <center style="width: 100%; background: #ffffff; text-align: left;">
+        <!-- Visually Hidden Preheader Text : BEGIN -->
+        <div style="display:none;font-size:1px;line-height:1px;max-height:0px;max-width:0px;opacity:0;overflow:hidden;mso-hide:all;font-family: sans-serif;">
+            PROFFF - nieuwsbrief
+        </div>
+        <!-- Visually Hidden Preheader Text : END -->
+
+
+        <div style="max-width: 680px; margin: auto;" class="email-container">
+            <!-- Email Header : BEGIN -->
+            <!--[if mso]>
+            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="680" align="center">
+            <tr>
+            <td align="left" valign="top" width="140">
+            <![endif]-->
+            <!--<table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center" width="100%"
+                   style="max-width: 680px;">
+                <tr>
+                    <td style="padding: 10px; text-align: center; max-width:140px;
+                    font-family: 'Open Sans Light', sans-serif; font-size: 12px; color: #97460a;" width="140">
+                        <img src="http://bvlf.org/media/72544/profff-2017_120.png" width="120" height="70"
+                             alt="Profff"
+                             border="0" style="height: auto;
+                             font-family: 'Open Sans Light', sans-serif;
+                             font-size: 13px; line-height: 14px; color: #97460a;" />
+                    </td>
+                    <td style="font-family: 'Open Sans Light', sans-serif; font-size: 26px; color: #97460a;
+                        padding:20px;" width="460">
+                        Vereniging van de Belgische Leraren Frans
+                        van de Vlaamse Gemeenschap
+                    </td>
+                </tr>
+            </table>-->
+            <table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center" width="100%"
+                   style="max-width: 680px;">
+                <tr>
+                    <!-- dir=ltr is where the magic happens. This can be changed to dir=rtl to swap the alignment on wide while maintaining stack order on narrow. -->
+                    <td dir="ltr" bgcolor="#ffffff" align="center" height="100%" valign="top" width="100%" style="padding: 10px 0;">
+                        <!--[if mso]>
+                <table role="presentation" border="0" cellspacing="0" cellpadding="0" align="center" width="660">
+                <tr>
+                <td align="center" valign="top" width="660">
+                <![endif]-->
+                        <table role="presentation" border="0" cellpadding="0" cellspacing="0" align="center" width="100%"
+                               style="max-width:660px;">
+                            <tr>
+                                <td align="center" valign="top" style="font-size:0; padding: 10px 0;">
+                                    <!--[if mso]>
+                            <table role="presentation" border="0" cellspacing="0" cellpadding="0" align="center" width="660">
+                            <tr>
+                            <td align="left" valign="top" width="220">
+                            <![endif]-->
+                                    <div style="display:inline-block; margin: 0 -2px; max-width: 200px; min-width:130px;
+                                    vertical-align:top; width:100%;" class="stack-column">
+                                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                            <tr>
+                                                <td dir="ltr" style="padding: 0 10px 10px 10px;" class="center-on-narrow">
+                                                    <img src="http://bvlf.org/media/72544/profff-2017_120.png" width="200" height=""
+                                                         border="0" alt="Profff" class="center-on-narrow"
+                                                         style="width: 100%; max-width: 120px; height: auto;
+                                                      background: #ffffff; font-family: 'Open Sans Light', sans-serif;
+                                                      font-size: 16px; color: #97460a;">
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                    <!--[if mso]>
+                            </td>
+                            <td align="left" valign="top" width="440">
+                            <![endif]-->
+                                    <div style="display:inline-block; margin: 0 -2px; max-width:66.66%; min-width:320px; vertical-align:top;" class="stack-column">
+                                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                            <tr>
+                                                <td dir="ltr" style="font-family: 'Open Sans Light', sans-serif;
+                                                font-size: 20px; line-height:22px;
+                                                color: #97460a; padding: 10px 10px 0;"
+                                                    class="center-on-narrow">
+                                                    Vereniging van de Belgische Leraren Frans
+                                                    van de Vlaamse Gemeenschap
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                    <!--[if mso]>
+                            </td>
+                            </tr>
+                            </table>
+                            <![endif]-->
+                                </td>
+                            </tr>
+                        </table>
+                        <!--[if mso]>
+                </td>
+                </tr>
+                </table>
+                <![endif]-->
+                    </td>
+                </tr>
+                </table>
+
+                <!--[if mso]>
+        </td>
+        </tr>
+        </table>
+        <![endif]-->
+                <!-- Email Header : END -->
+                <!-- Email Body : BEGIN -->
+                <table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center" width="100%"
+                       style="max-width: 680px;">
+                    <tr>
+                        <td bgcolor="#ffffff">
+                            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                <tr>
+                                    <td style="padding: 10px; font-family:'Open Sans', sans-serif;
+                                font-size: 14px; line-height: 20px; color: #454545;">
+
+                                        <p><em><strong> Nieuwsbrief  van 15 februari 2017 van ProFFF (ex B.V.L.F. vzw)</strong></em></p>
+
+                                        <p><em><strong> Lettre d’infos du 15 février  2017 de ProFFF  (ex B.V.L.F.asbl)</strong></em></p>
+                                        <p>                                                                       Contact e-mail: <a href="mailto:vzw_bvlf@hotmail.com">vzw_bvlf@hotmail.com</a></p>
+
+                                        <p><em><strong>Formations – bijscholingen</strong></em></p>
+
+                                        <ul>
+                                            <li><strong>Studiedag Frans ProFFF, nog mogelijkheden! Zie online op <a>www.bvlf.org</a></strong></li>
+                                        </ul>
+                                        <p><span style="text-decoration: underline;">Inschrijven kan nog tot 21 februari!</span></p>
+
+                                        <ul>
+                                            <li><strong>FrancoForm </strong></li>
+                                        </ul>
+                                        <ul>
+                                            <li><img style="float: left;" src="http://www.bvlf.org/media/64306/francoform.png" alt="Francoform" title="Francoform" width="126" height="35" rel="393,109" /></li>
+                                        </ul>
+                                        <p> </p>
+                                        <ul>
+                                            <li><strong>Nascholingsproject 2017-2019 </strong></li>
+                                        </ul>
+                                        <p>Het project FrancoForm is een nascholingsproject voor de leerkrachten Frans van het SO en het VO in Vlaanderen. Als deelnemende leerkracht kan je door het volgen van deze vorming:</p>
+                                        <ul>
+                                            <li>je kennis van de pedagogie en didactiek van het Frans als moderne vreemde taal upgraden en verdiepen;</li>
+                                            <li>je beheersing van het Frans en van de culturele en socioculturele aspecten van de francofonie versterken;</li>
+                                            <li>leren hoe je de interculturele aspecten van het leren van een vreemde taal beter kan implementeren.</li>
+                                        </ul>
+                                        <p>Dit gloednieuw project richt zich tot leerkrachten die hun initiële opleiding willen perfectioneren, hun beheersing van ICT willen verbeteren en die graag willen deelnemen aan een Franstalig taal- en cultureel bad om op een adequate en motiverende manier de verschillende aspecten van de Franstalige culturen te integreren in hun lespraktijk.</p>
+                                        <p>Meer informatie over de opzet en de doelstellingen van FrancoForm vind je in het protocol dat op 20 december 2016 door alle partners van het project ondertekend werd.</p>
+                                        <p>Heb je interesse?</p>
+                                        <p>Inschrijven kan vanaf 24 februari, vul hiervoor het kandidaatstellingsdossier in en bezorg het ons tegen 27 maart 2017.</p>
+                                        <p>Heb je vragen?<br /> Voor verdere informatie kan je ons per mail contacteren op francoform@gmail.com</p>
+                                        <p> </p>
+                                        <ul>
+                                            <li><strong>Centrum Nascholing Onderwijs - Universiteit Antwerpen</strong></li>
+                                        </ul>
+                                        <p><a href="http://www.ua.ac.be/main.aspx?c=*CNO&amp;n=42452&amp;ct=42920&amp;groep=48&amp;sort=csdt">Voor leerkrachten Frans</a> Zie onze website: <a href="http://www.uacno.be/">www.uacno.be</a></p>
+                                        <p> </p>
+                                        <p>-        Differentiatie in de klaspraktijk Frans (15 maart 2017): Rita Van den Heuvel &amp; Gina Verbeiren <a href="http://www.uacno.be/16/FRA115">http://www.uacno.be/16/FRA115</a></p>
+                                        <p>-        Dynamique dans la didactique (16 maart 2017): De Volder  Eva <a href="http://www.uacno.be/16/FRA623">http://www.uacno.be/16/FRA623</a></p>
+                                        <p>-        Je veux des applications dans ma classe de FLE! (9 mei 2017): Bogaert Veronik , <a href="http://www.uacno.be/16/FRA127">http://www.uacno.be/16/FRA127</a></p>
+                                        <p> </p>
+                                        <ul>
+                                            <li><strong>Navormingen SLO Frans – KU Leuven </strong></li>
+                                        </ul>
+                                        <p><strong>Woensdag 26 april 2017</strong> (9u30-12u30) : Lezen of tv-kijken als bron voor woordenschatverwerving</p>
+                                        <p>Gaan woordenschatverwerving en receptieve vaardigheidstraining hand in hand? En hoe authentieke documenten verrijken om woordenschatverwerving te bevorderen? (Maribel Montero-Perez – KU Leuven en Elke Peters – KuLeuven)</p>
+                                        <p><a href="http://www.kuleuven.be/samenwerking/avlnascholingen/fr31">http://www.kuleuven.be/samenwerking/avlnascholingen/fr31</a></p>
+                                        <p> </p>
+                                        <ul>
+                                            <li><strong>      Alliance française Oost-Vlaanderen</strong> 
+                                            <strong><img style="float: left;" src="http://www.bvlf.org/media/264/alliancefrancaise.gif" alt="AllianceFrancaise" title="AllianceFrancaise" width="92" height="55" rel="294,174" /></strong></li>
+                                        </ul>
+                                        <p style="text-align: left;">    Overzicht activiteiten :  <a href="http://www.alliancefr-oostvlaanderen.be">http://www.alliancefr-oostvlaanderen.be</a></p>
+                                        <p> </p>
+                                        <p>&gt;<strong> Op donderdag 20 april 2017</strong> : « Huis clos » van Jean-Paul Sartre door ‘Théâtre en liberté’ (Bruxelles)</p>
+                                        <p> Er komt een schoolvoorstelling om 14u00 en een avondvoorstelling om 20u00.</p>
+                                        <p><a href="http://www.alliancefr-oostvlaanderen.be">http://www.alliancefr-oostvlaanderen.be</a></p>
+                                        <p> </p>
+                                        <p>&gt; <strong>Op zaterdag 22 april</strong>  : « Open Deur Roeland - Alliance française - Mediatheek Frans documentatiecentrum (BibRoeland) ». </p>
+                                        <p> </p>
+                                        <p>&gt; <strong>Op 27 maart en 22 mei : n</strong>og 2 cafés littéraires van Alliance Française : telkens de maandagavond van 19u30 tot 21u30, in Alliance française (Krijgslaan 20-22)</p>
+                                        <p> </p>
+                                        <p><strong>Conférence</strong>  </p>
+                                        <p><img src="http://www.bvlf.org/media/263/img-logo-maee.jpg" alt="AmbassadeFrance" title="AmbassadeFrance" width="122" height="72" rel="75,77" />             <img src="http://www.bvlf.org/media/264/alliancefrancaise.gif" alt="AllianceFrancaise" title="AllianceFrancaise" width="118" height="71" rel="294,174" /></p>
+                                        <p> </p>
+                                        <p>A l’initiative de l’<strong>Ambassade de France</strong> et en coopération avec l’<strong>Alliance française de Bruxelles-Europe</strong> et l’<strong>Alliance française d’ Oost-Vlaanderen</strong>, vous êtes invités à la conférence (gratuite!) de Monsieur Jean-Robert Pitte, Professeur émérite de Géographie et d’Aménagement à l’Université Paris-Sorbonne.</p>
+                                        <p>Pourquoi et comment « Le repas gastronomique des Français » a-t-il été reconnupar l’UNESCO comme un élément du patrimoine immatériel de l’humanité? </p>
+                                        <p>A Gand, <strong>le mercredi 29 mars</strong> à 19h00 chez Roeland, Krijgslaan 18-22 à Gand ;<br /> A Bruxelles, l<strong>e jeudi 30 mars</strong> à 13h30 à l’Alliance française Bruxelles-Europe au Kunstlaan 46 Avenue des Arts,  1000 Bruxelles.</p>
+                                        <p>Pour tout renseignement supplémentaire, contacter <a href="mailto:daniel-leroy@telenet.be">daniel-leroy@telenet.be</a> </p>
+                                        <p> </p>
+                                        <ul>
+                                            <li><strong>Focus Franse Film</strong></li>
+                                        </ul>
+                                        <p>De weken van de Franse film zijn nog in de run tot in mei. Neem een kijkje op de site voor het programma <a href="http://www.weekvandefransefilm.org/fr/semaine-du-film">http://www.weekvandefransefilm.org/fr/semaine-du-film</a> en raadpleeg de pedagogische fiches ter  beschikking op <a href="http://www.weekvandefransefilm.org/fr/fiches">http://www.weekvandefransefilm.org/fr/fiches</a></p>
+
+                                        <p><em><strong>Concours - Wedstrijden</strong></em></p>
+                                        <ul>
+                                            <li><strong>Olympi@de Frans</strong></li>
+                                        </ul>
+                                        <p>19 april: finaleronde van de 30ste Olympi@de van het Frans:</p>
+                                        <p>MAX en JUNIOR: mondelinge proeven in Universiteit Hasselt</p>
+                                        <p>CADET: finaleronde via internet in de eigen school</p>
+                                        <p>Woensdag10 mei: proclamatie en prijsuitreiking van de 30ste Vlaamse olympi@de van het Frans</p>
+                                        <ul>
+                                            <li><strong>Le concours Haïkus</strong></li>
+                                        </ul>
+                                        <p>Proclamation et remises des prix  du Concours Haïku le 17 mars ’17. Tous les renseignements sur le concours  sont à votre disposition sur le site de la BVLFwww.bvlf.orget sur le site de FORMACOM <a href="http://www.form-a-com.org/">www.form-a-com.org</a>.: Les lauréats et leurs professeurs seront invités par mail.</p>
+                                        <ul>
+                                            <li><strong>VOOR INNOVATIEF TALENONDERWIJS 2017</strong></li>
+                                        </ul>
+                                        <p><strong>Thema: Taalvriendelijke samenleving – het informeel leren van talen.      </strong></p>
+                                        <p> Het Talenlabel kan uitgereikt worden aan eender welk initiatief dat past bij het thema ‘Taalvriendelijke samenleving – het informeel leren van talen’ zoals hierboven omschreven.</p>
+                                        <p>Het kan gaan om:</p>
+                                        <p>-        scholen / onderwijs- en vormingsorganisaties die zich open stellen voor actoren en situaties waarin taalverwerving op informele manier geïntegreerd wordt in het formele curriculum</p>
+                                        <p>-        andere organisaties die buiten de schoolse context taalverwerving bij hun doelgroep(en) stimuleren en bevorderen door activiteiten in een andere taal aan te bieden (bijvoorbeeld via conversatietafels, filmfora…)</p>
+                                        <p>De aanvragen voor het Europees Talenlabel 2017 zetten spontaan leren centraal, bovendien gaat het om doordacht beleidsmatig opgenomen initiatieven/projecten.</p>
+                                        <p>Het Talenlabel wordt toegekend aan projecten/initiatieven die in 2017 afgesloten worden of zijn, of die momenteel lopen. Projecten/initiatieven die al in 2015 of daarvoor afgesloten werden of die zich pas in een concept- of beginfase bevinden, komen niet in aanmerking.</p>
+                                        <p>U dient uiterlijk op 26 april 2017 het deelnameformulier in (zie informatiebrochure online)</p>
+                                        <p>Wenst u meer informatie over het Europees Talenlabel dan kan u hiervoor terecht bij :</p>
+                                        <p>Epos vzw Koning Albert II-laan 15, H. Consciencegebouw - 1210 Brussel</p>
+                                        <p>E-mail: <a href="mailto:renilde.reynders@epos-vlaanderen.be">renilde.reynders@epos-vlaanderen.be</a></p>
+                                        <p>Website: www.Epos-vlaanderen.be </p>
+                                        <p>En/of <a href="http://ec.europa.eu/languages/policy/strategic-framework/language-label_en.htm">http://ec.europa.eu/languages/policy/strategic-framework/language-label_en.htm </a></p>
+                                        <p><strong>Nieuws van de Vlaamse Overheid</strong></p>
+                                        <ul>
+                                            <li><strong>Departement Onderwijs en Vorming</strong></li>
+                                        </ul>
+                                        <p>Vervangende klasactiviteiten tijdens uw bedrijfsstage</p>
+                                        <p>Wil u de kans grijpen om op bedrijfsstage te gaan en vindt uw school het moeilijk om u voor de periode waarin u op bedrijfsstage gaat te vervangen?</p>
+                                        <p>Het Departement Onderwijs en Vorming organiseert een project waardoor je tijdens de afwezigheid vervangende activiteiten rond vakoverschrijdende eindtermen kan laten organiseren voor de leerlingen. Een ervaren organisatie staat in voor activiteiten die ondernemingszin, creativiteit en ondernemerschap stimuleren bij de leerlingen. De leerkracht wordt ondergedompeld in de bedrijfswereld, terwijl de leerlingen leren hoe ze zelf ondernemender kunnen worden. Dit is volledig gratis! De activiteiten zijn laagdrempelig en geschikt voor alle studierichtingen. De vervangingsactiviteiten worden ingericht gedurende maximaal 5 werkdagen.</p>
+                                        <p> Interesse?</p>
+                                        <p>U vindt alle informatie hierover op <a href="http://www.onderwijs.vlaanderen.be/nl/project-klasactiviteiten-ondernemingszin-tijdens-afwezigheid-leraar-op-bedrijfsstage">http://www.onderwijs.vlaanderen.be/nl/project-klasactiviteiten-ondernemingszin-tijdens-afwezigheid-leraar-op-bedrijfsstage</a></p>
+                                        <p>Isabelle Goudeseune</p>
+                                        <p>DEPARTEMENTONDERWIJS &amp; VORMING</p>
+                                        <p>T 02 553 95 94 </p>
+                                        <p><a href="http://www.onderwijs.vlaanderen.be/">www.onderwijs.vlaanderen.be</a></p>
+                                        <p><strong>Interessante suggesties</strong></p>
+                                        <p><a href="http://www.etwinning.net/">eTwinning</a> is <strong>de community voor scholen in Europa</strong>. Leerkrachten uit de deelnemende landen gebruiken na registratie de hulpmiddelen om met elkaar in contact te komen, ideeën en praktijkvoorbeelden uit te wisselen, samen te werken in groepen, samen te leren tijdens online leerevenementen en projecten uit te voeren.</p>
+                                        <p> We organiseren ook regelmatig workshops in binnen- en buitenland waar leraren onze projectwerking kunnen leren kennen.</p>
+                                        <p>Wij bieden momenteel twee zeer boeiende workshops voor lerarenFrans aan.</p>
+                                        <p>Het gaat enerzijds over een binnenlandse workshop bedoeld om projecten tussen klassen van de drie gemeenschappen op te starten: <a href="http://www.etwinning.be/vlaanderen/nl/nascholingen/vlaanderen/2017/belgica_workshop-829.html">eTwinning Belgica</a>. Anderzijds kunnen we drie Vlaamse leraren Frans gratis naar Parijs sturen om internationale projecten op te starten: <a href="http://www.etwinning.be/vlaanderen/nl/nascholingen/europa/2017/comment_monter_son_premier_projet_etwinning_etwinning_contact_seminar_in_parijs-831.html">Contact Seminar Paris</a>.</p>
+                                        <p> Nog wat vragen heeft over eTwinning. Neemt u gerust contact met me op.</p>
+                                        <p>E <a href="mailto:jeroen.dekeyser@epos-vlaanderen.be">jeroen.dekeyser@epos-vlaanderen.be</a>T +32 (0)2 553 97 58</p>
+
+                                        <p> <a href="http://swap-swap.us14.list-manage2.com/track/click?u=6728a4221ee804d151af1225c&amp;id=2ffc531331&amp;e=ee2688c8c5">www.swap-swap.be</a>.</p>
+                                        <p>Wat mag je verwachten?</p>
+                                        <ul>
+                                            <li>Swap-Swap is een platform waarop je een Swap kan vinden voor <strong>een uitwisseling</strong>. Het werkt zo: Je maakt een account aan, vult je profiel in, en zoekt tussen de profielen van Swaps in de andere taalgroep. Dan kan je met een aantal Swaps van jouw keuze contact leggen via de chatbox om kennis te maken.</li>
+                                            <li>Swap-Swap is een veilig platform: Bij Swap-Swap delen jongeren en ouders uit hetzelfde gezin een account. Elk gezinslid dat Swap-Swap actief wil gebruiken maakt een eigen login aan. Al deze gezinsleden kunnen alle berichten in de chatbox lezen. Bovendien stuurt Swap-Swap een e-mail uit wanneer iemand een nieuw bericht schrijft of aankrijgt. Transparant en duidelijk!</li>
+                                        </ul>
+                                        <p>Alle noodzakelijke functies voor een degelijk en veilig platform zijn aanwezig, maar uiteraard kan er nog veel verbeterd worden. Ook zijn sommige van de meldingen nog niet vertaald. Heb je ideeën of een suggestie voor Swap-Swap? Laat het ons weten op <a href="mailto:info@swap-swap.be">info@swap-swap.be</a>. We blijven voortdurend werken aan verbetering!</p>
+                                        <p><strong>Tombola organisée par "Accent français"</strong>, un des centres membre du "Groupement FLE", membre associé de la FIPF :</p>
+                                        <p>Accent Français lance son Stage d'été pour Professeurs de français et à cette occasion, nous serons heureux d'offrir un Stage d'été d'1 semaine d'une valeur de 430€ (350€ + frais d'inscription de 80€) * dans le cadre d'une tombola.</p>
+                                        <p>Voici une description de notre Stage d'été, il est très complet !<br /><a href="https://www.google.com/url?q=https://www.accentfrancais.com/uploads/files/general/5835a5c81f2b4-stage-profs-2017-fr.pdf&amp;sa=D&amp;ust=1487276433663000&amp;usg=AFQjCNHvLkr-1RixpDjaToi6ZDCfOvWb1Q" target="_blank">https://www.accentfrancais.com/uploads/files/general/5835a5c81f2b4-stage-profs-2017-fr.pdf</a></p>
+                                        <p>Pour participer, il vous suffit de compléter ce formulaire en ligne avant le 2/04/2017, le tirage au sort aura lieu le lundi 3/04/2017. A vous de jouer !</p>
+                                        <p>* Ce gain est valable sur notre Stage d'été pour Professeurs qui aura lieu du 10 au 21 juillet 2017 (semaine à choisir), il est utilisable par la personne qui aura remporté le gain uniquement, non cessible, ni payable. Hébergement, repas et activités non inclus.</p>
+                                        <p><a href="https://docs.google.com/forms/d/e/1FAIpQLSe2yzkkuR8eAnu70SwZ1551u9uwCS1JPRXfoqNQm54Re6AnHw/viewform?c=0&amp;w=1" target="_blank">https://docs.google.com/forms/d/e/1FAIpQLSe2yzkkuR8eAnu70SwZ1551u9uwCS1JPRXfoqNQm54Re6AnHw/viewform?c=0&amp;w=1</a></p>
+                                        <p> </p>
+                                        <p>Onze sponsors :</p>
+                                        <p style="text-align: left;">
+                                            <img src="http://www.bvlf.org/media/50697/logo_talenland.png" alt="Logo Talenland"
+                                                 title="Logo Talenland" width="91" height="114" rel="120,150" />
+                                            <img src="http://www.bvlf.org/media/50695/diekeure_logo_20x10cm.png" alt="Diekeure Logo 20X10cm"
+                                                 title="Diekeure Logo 20X10cm" width="74" height="101" rel="110,150" />
+                                            <img src="http://www.bvlf.org/media/50701/plantyn-logo.png" alt="Plantyn Logo" title="Plantyn Logo"
+                                                 width="83" height="113" rel="110,150" />
+                                            <img src="http://www.bvlf.org/media/50700/logoRoeland.jpg" alt="Logoroeland" title="Logoroeland" width="94"
+                                                 height="118" rel="120,150" />
+                                        </p>
+
+                                    </td>
+                                </tr>
+                            </table>
+
+                        </td>
+                    </tr>
+                </table>
+
+</div>
+    </center>
+
+    <!--END WRAPPER -->
+</body>
+</html>
+
+
+
+
