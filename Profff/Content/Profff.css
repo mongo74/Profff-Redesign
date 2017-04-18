@@ -177,11 +177,15 @@ ul.SecondaryMenu a:hover {
   padding-right: 8px;
 }
 .home-page .magazine {
+  background-image: url('../images/design/2017-01_Cover.png');
+  background-repeat: no-repeat;
   margin-top: 2em;
   background-color: #9DAFCE;
   color: #ffffff;
 }
 .home-page .magazine .right-agile {
+  background-color: #9DAFCE;
+  min-width: 50%;
   padding-right: 15px;
   padding-left: 15px;
 }
@@ -221,9 +225,9 @@ ul.SecondaryMenu a:hover {
     padding-top: 12px;
     padding-bottom: 8px;
   }
-  .home-page .magazine img {
-    width: 50%;
-    float: left;
+  .home-page .magazine {
+    background-size: 50%;
+    min-height: 360px;
   }
   .home-page .magazine .right-agile {
     float: right;
@@ -330,10 +334,11 @@ ul.SecondaryMenu a:hover {
     margin-bottom: 1em;
     padding: 2px 0.4em 0.4em 0.4em;
   }
-  .home-page .magazine img {
-    width: 100%;
+  .home-page .magazine {
+    background-size: 100%;
   }
   .home-page .magazine .right-agile {
+    margin-top: 15em;
     width: 100%;
   }
   .home-page .news .news-item {

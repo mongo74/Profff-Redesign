@@ -120,6 +120,7 @@
     <Content Include="favicon.ico" />
     <Content Include="Html\Leftout-items.html" />
     <Content Include="Html\sample.html" />
+    <Content Include="images\design\2017-01_Cover.png" />
     <Content Include="images\design\ab.jpg" />
     <Content Include="images\design\house.jpg" />
     <Content Include="images\design\sampleImage_01.jpg" />
