@@ -118,6 +118,7 @@
     </Content>
     <Content Include="Content\SAP-icons.css" />
     <Content Include="favicon.ico" />
+    <Content Include="Html\FormPage.html" />
     <Content Include="Html\Leftout-items.html" />
     <Content Include="Html\sample.html" />
     <Content Include="images\design\2017-01_Cover.png" />
@@ -144,6 +145,7 @@
     <Content Include="images\sponsors\logo_talenland.png" />
     <Content Include="images\sponsors\logo_vanin.png" />
     <Content Include="images\sponsors\plantyn-logo.png" />
+    <Content Include="index.html" />
     <Content Include="MailTemplates\MailTemplate - Empty.html" />
     <Content Include="MailTemplates\MailTemplate.html" />
     <Content Include="packages.config" />
@@ -288,6 +290,8 @@
     <Content Include="scripts\bootstrap.min.js" />
     <Content Include="scripts\jquery-1.9.1.js" />
     <Content Include="scripts\jquery-1.9.1.min.js" />
+    <Content Include="scripts\plugins\jquery.countTo.js" />
+    <Content Include="scripts\Scripts.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
