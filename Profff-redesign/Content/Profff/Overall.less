@@ -1,0 +1,343 @@
+﻿a {
+    &:hover {
+        text-decoration: none;
+    }
+}
+// Variables
+.wrapper {
+    margin-bottom: 24px;
+}
+
+#logo {
+    font-size: 1.8em;
+    color: @PickledBluewood;
+
+    > span {
+        padding-left: 25px;
+
+        > small {
+            font-size: 0.65em;
+            padding-left: 25px;
+        }
+    }
+}
+
+.iconBefore {
+    margin-right: 4px;
+}
+
+.iconBehind {
+    margin-left: 4px;
+}
+
+ul.SecondaryMenu {
+    float: right;
+
+    > li {
+        list-style: none;
+        float: left;
+        padding-left: 12px;
+        padding-right: 4px;
+    }
+
+    > li.divider {
+        border-right: 1px solid @RockBlue;
+    }
+
+    a {
+        color: @RockBlue;
+        font-size: 1em;
+
+        &:hover {
+            color: @Brick;
+            text-decoration: none;
+        }
+    }
+}
+
+.Registration {
+    background-color: @Brick;
+
+    > li.dropdown {
+
+        a.dropdown-toggle {
+            color: @Wewak;
+            background-color: @Brick;
+
+            &:hover,
+            &:focus {
+                color: @Wewak;
+                background-color: @Brick;
+            }
+        }
+    }
+
+
+    .dropdown-menu {
+        background-color: @Brick;
+
+        .dropdown-header {
+            border-color: @Brick;
+        }
+
+        .divider {
+            background-color: @Wewak;
+        }
+
+        > li > a {
+            color: @Wewak;
+
+            &:hover,
+            &:focus {
+                color: @Wewak;
+                background-color: @Maroon;
+            }
+        }
+
+        > .active > a {
+            &,
+            &:hover,
+            &:focus {
+                color: @Wewak;
+                background-color: @Maroon;
+            }
+        }
+
+        > .disabled > a {
+            &,
+            &:hover,
+            &:focus {
+                color: @Cinnabar;
+                background-color: @Brick;
+            }
+        }
+    }
+}
+
+.footer {
+    background-color: @ShipCove;
+
+    .footer-content {
+        padding: 8px;
+
+        h1, h2, h3, h4 {
+            color: @Botticelli;
+        }
+
+        a {
+            color: @PickledBluewood;
+
+
+            &:hover {
+                text-decoration: none;
+                color: @Botticelli;
+            }
+        }
+
+        ul.FooterNav {
+            padding-left: 0;
+            padding-bottom: 0.8em;
+
+            > li {
+                list-style: none;
+                margin: 0;
+            }
+        }
+
+        .AboutUs {
+            color: #2c3e50;
+
+
+
+            .sponsorblock {
+                text-align: center;
+
+
+                .Sponsor {
+                    padding: 2px 2px 2px 8px;
+                    float: left;
+
+                    img {
+                        display: block;
+                        max-width: 55px;
+                        max-height: 70px;
+                        width: auto;
+                        height: auto;
+                    }
+                }
+            }
+        }
+    }
+
+    .bottom-bar {
+        padding-top: 5px;
+        padding-bottom: 5px;
+        background-color: #2c3e50;
+        color: #708BB8;
+    }
+}
+
+/*FORM ELEMENTS  */
+.form-group {
+    label.control-label {
+        padding-right: 5px;
+    }
+
+    .help-text {
+        font-size: 0.8em;
+        color: #2c3e50;
+    }
+}
+
+
+/*------------------------------------------*/
+/* RECURRING PAGE ELEMENTS------------------*/
+
+.BreadcrumbBlock {
+    background-color: @PickledBluewood;
+}
+
+
+/*------------------------------------------*/
+/* PAGES  ----------------------------------*/
+
+/* Homepage  ----------*/
+.home-page {
+    .vzw {
+        .vzw-boxes {
+            .vzw-box {
+                padding: 1em;
+                text-align: center;
+                background-color: rgba(255,255,255,.80);
+                border-radius: 25px;
+
+                h3 {
+                    font-weight: 400;
+                    color: #708BB8;
+                }
+            }
+        }
+    }
+
+    .news {
+
+        .news-item {
+            position: relative;
+            padding-left: 8px;
+            padding-right: 8px;
+
+            span {
+                color: @RockBlue;
+            }
+
+            .thumb {
+                float: left;
+                margin-right: 10px;
+                padding-bottom: 2em;
+            }
+
+            p {
+                padding-right: 8px;
+            }
+        }
+    }
+
+    .magazine {
+        background-image: url('../../images/design/2017-01_Cover.png');
+        background-repeat: no-repeat;
+        margin-top: 2em;
+        background-color: @RockBlue;
+        color: @White;
+
+        .right-agile {
+            background-color: @RockBlue;
+            min-width: 50%;
+            padding-right: 15px;
+            padding-left: 15px;
+
+            h2 {
+                padding-top: 0 !important;
+            }
+        }
+    }
+
+    .studiedag {
+        .circle {
+            border-radius: 50%;
+            padding: 2em;
+        }
+
+        .dark-bg {
+            background-color: @PickledBluewood;
+            color: @RockBlue;
+        }
+
+        .icon {
+            color: @ShipCove;
+        }
+
+        .counter {
+            font-size: 28px;
+            color: @ShipCove;
+        }
+    }
+}
+
+/* Studiedag ----------*/
+.studiedag-page {
+    .studiedagAteliers {
+
+        .atelierTile {
+            margin: 2px;
+            padding: 5px;
+
+            h3 {
+                font-weight: lighter;
+                padding-top: 0;
+                margin-bottom: 8px;
+
+                small {
+                }
+            }
+
+            .speaker {
+                padding-top: 1em;
+                font-size: 0.83em;
+                color: @Maroon;
+                font-weight: 600;
+
+                small {
+                    display: block;
+                    font-weight: 400;
+                }
+            }
+
+            .caption {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                padding: 20px 25px;
+                opacity: 0;
+                background-color: @CatskillWhite;
+
+                .targetAudience {
+                    display: block;
+                }
+
+                .practical {
+                    padding-top: 1em;
+
+                    .places {
+                        float: right;
+                    }
+                }
+            }
+        }
+
+        .atelierTile:hover .caption {
+            opacity: 1;
+        }
+    }
+}
