@@ -117,10 +117,15 @@
     <Content Include="Content\Profff.min.css">
       <DependentUpon>Profff.css</DependentUpon>
     </Content>
-    <Content Include="Content\SAP-icons.css" />
+    <Content Include="Content\SAPicons.css" />
     <Content Include="favicon.ico" />
-    <Content Include="Html\Conference.html" />
+    <Content Include="Html\BlogArtikelPage.html" />
+    <Content Include="Html\BlogListPage.html" />
+    <Content Include="Html\Conference-MeetUp.html" />
+    <Content Include="Html\news-CollegeGreen.html" />
     <Content Include="Html\Studiedag.html" />
+    <Content Include="Html\partners-sponsors.html" />
+    <Content Include="Html\BasicContent.html" />
     <Content Include="Html\TablePage.html" />
     <Content Include="Html\FormPage.html" />
     <Content Include="Html\Leftout-items.html" />
@@ -128,10 +133,13 @@
     <Content Include="images\design\2017-01_Cover.png" />
     <Content Include="images\design\ab.jpg" />
     <Content Include="images\design\banner.jpg" />
+    <Content Include="images\design\Banner_library.jpg" />
+    <Content Include="images\design\Banner_OverOns.jpg" />
+    <Content Include="images\design\Banner_people01.jpg" />
     <Content Include="images\design\house.jpg" />
+    <Content Include="images\design\OverOns-Fullsize.jpg" />
     <Content Include="images\design\sampleImage_01.jpg" />
     <Content Include="images\design\sampleImage_02.jpg" />
-    <Content Include="images\design\sampleImage_03.jpg" />
     <Content Include="images\design\news-thumb-1.jpg" />
     <Content Include="images\design\news-thumb-2.jpg" />
     <Content Include="images\design\news-thumb-3.jpg" />
@@ -299,6 +307,7 @@
     <Content Include="scripts\jquery-1.9.1.min.js" />
     <Content Include="scripts\plugins\jquery.countTo.js" />
     <Content Include="scripts\Scripts.js" />
+    <Content Include="scripts\Styling.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

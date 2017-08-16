@@ -1,9 +1,4 @@
-﻿a {
-    &:hover {
-        text-decoration: none;
-    }
-}
-// Variables
+﻿// Variables
 .wrapper {
     margin-bottom: 24px;
 }
@@ -28,6 +23,16 @@
 
 .iconBehind {
     margin-left: 4px;
+}
+
+.page-sidebar {
+    background-color: @CatskillWhite;
+    padding: 12px;
+}
+
+.has-divider {
+    border-bottom: 1px solid @Botticelli;
+    padding-bottom: 15px;
 }
 
 ul.SecondaryMenu {
@@ -127,7 +132,6 @@ ul.SecondaryMenu {
         a {
             color: @PickledBluewood;
 
-
             &:hover {
                 text-decoration: none;
                 color: @Botticelli;
@@ -147,11 +151,8 @@ ul.SecondaryMenu {
         .AboutUs {
             color: #2c3e50;
 
-
-
             .sponsorblock {
                 text-align: center;
-
 
                 .Sponsor {
                     padding: 2px 2px 2px 8px;
@@ -189,7 +190,6 @@ ul.SecondaryMenu {
     }
 }
 
-
 /*------------------------------------------*/
 /* RECURRING PAGE ELEMENTS------------------*/
 
@@ -197,12 +197,17 @@ ul.SecondaryMenu {
     background-color: @PickledBluewood;
 }
 
-
+.PageBanner {
+    margin-bottom: 15px;
+    background-color: @ShipCove;
+    background-repeat: no-repeat;
+    background-position: center;
+}
 /*------------------------------------------*/
 /* PAGES  ----------------------------------*/
 
 /* Homepage  ----------*/
-.home-page {
+.homepage {
     .vzw {
         .vzw-boxes {
             .vzw-box {
@@ -220,7 +225,6 @@ ul.SecondaryMenu {
     }
 
     .news {
-
         .news-item {
             position: relative;
             padding-left: 8px;
@@ -262,29 +266,30 @@ ul.SecondaryMenu {
     }
 
     .studiedag {
-        .circle {
-            border-radius: 50%;
-            padding: 2em;
-        }
+        .CounterBlock {
 
-        .dark-bg {
-            background-color: @PickledBluewood;
-            color: @RockBlue;
-        }
+            .fa-circle {
+                color: @PickledBluewood;
+            }
 
-        .icon {
-            color: @ShipCove;
-        }
+            .si-inverse, .fa-inverse {
+                color: @RockBlue;
+            }
 
-        .counter {
-            font-size: 28px;
-            color: @ShipCove;
+            H3, h3 {
+                color: @PickledBluewood;
+            }
+
+            .counter {
+                font-size: 28px;
+                color: @RockBlue;
+            }
         }
     }
 }
 
 /* Studiedag ----------*/
-.studiedag-page {
+.StudiedagPage {
     .studiedagAteliers {
 
         .atelierTile {
@@ -338,6 +343,162 @@ ul.SecondaryMenu {
 
         .atelierTile:hover .caption {
             opacity: 1;
+        }
+    }
+}
+
+/* BLOG PAGE ----------*/
+.blog-page {
+    .message {
+        color: @RockBlue;
+    }
+
+    article {
+        header {
+            margin-bottom: 15px;
+        }
+
+        figure {
+            margin-bottom: 1em;
+        }
+
+        .post-content {
+        }
+
+        footer {
+            margin-bottom: 15px;
+        }
+
+        margin-bottom: 30px;
+
+        p {
+            color: @gray;
+        }
+
+        span.ArticleMetaData {
+            color: @RockBlue;
+        }
+
+        img.thumb {
+            max-width: 100%;
+        }
+    }
+
+    .page-sidebar {
+        .articulate-categorylist .content,
+        .articulate-tagcloud .content {
+            text-align: center;
+        }
+
+        ul {
+            padding: 0;
+
+            > li {
+                margin: 0;
+                display: inline-block;
+                list-style: none;
+                padding: 8px;
+
+                span {
+                    color: @SanMarino;
+                }
+
+                .thumb {
+                    float: left;
+                    margin-right: 4px;
+                    max-width: 33%;
+                }
+            }
+        }
+
+        ul.tag-cloud,
+        ul.categorylist {
+            > li {
+                a {
+                    padding: 5px;
+                    background-color: @PickledBluewood;
+                    color: @Botticelli;
+                    border-radius: 4px;
+                    font-size: smaller;
+
+                    &:hover {
+                        background-color: @Brick;
+                        border-color: @Brick;
+                        color: @Botticelli;
+                    }
+                }
+            }
+        }
+
+
+        .articulate-search {
+            width: 100%;
+            padding-top: 12px;
+            padding-bottom: 36px;
+
+            .btn-sm {
+                font-size: 14px;
+                line-height: 1.6;
+            }
+
+            margin-bottom: 3em;
+        }
+
+        .widget {
+            border-top: 1px solid @Botticelli;
+        }
+
+        .recentposts {
+            margin-top: 1em;
+        }
+    }
+}
+
+.sponsorspage {
+    .SponsorBlock {
+        display: block;
+        color: @gray-light;
+        font-weight: 300;
+
+
+        .logo {
+            float: left;
+            padding-right: 20px;
+            margin-left: 10px;
+        }
+
+        address {
+            float: left;
+            display: block;
+
+            span {
+                display: block;
+                padding-left: 18px;
+            }
+        }
+    }
+}
+
+.basiccontentpage {
+    .intro {
+        font-style: italic;
+        color: @gray-light;
+        font-size: 1.2em;
+        margin-bottom: 1em;
+
+        p {
+        }
+    }
+
+    .bodycontent {
+        h3 {
+            padding-top:0.5em;
+            color: @gray-dark;
+        }
+
+        h4 {
+            padding-top:0.2em;
+            color: @gray-dark;
         }
     }
 }

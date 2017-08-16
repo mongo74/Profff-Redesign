@@ -14,12 +14,12 @@
     <link rel="icon" href="favicon.ico" type="image/x-icon">
 
     <!-- Global CSS -->
-    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="/Content/bootstrap.min.css" rel="stylesheet" />
 
     <!-- FONTS CSS-->
-    <link href="Content/fonts.css" rel="stylesheet" />
-    <link href="Content/font-awesome.css" rel="stylesheet" />
-    <link href="Content/SAP-icons.css" rel="stylesheet" />
+    <link href="/Content/fonts.css" rel="stylesheet" />
+    <link href="/Content/font-awesome.css" rel="stylesheet" />
+    <link href="/Content/SAPicons.css" rel="stylesheet" />
     <!-- Plugins CSS -->
     <!--<link rel="stylesheet" href="./Responsive website template for education_files/font-awesome.css">
     <link rel="stylesheet" href="./Responsive website template for education_files/flexslider.css">
@@ -37,7 +37,7 @@
 
 </head>
 
-<body class="home-page">
+<body class="homepage">
     <div class="wrapper">
         <!-- ******HEADER****** -->
         <header class="header">
@@ -46,7 +46,7 @@
                 <div class="container  ">
                     <ul class="SecondaryMenu">
                         <li class="divider"><a href="/"><i class="iconBefore icon icon-home icon-fw"></i><span class="hidden-xs">Home</span></a></li>
-                        <li class="divider"><a href="#"><i class="iconBefore icon icon-newspaper"></i><span class="hidden-xs">Nieuws</span></a></li>
+                        <li class="divider"><a href="/html/BloglistPage.html"><i class="iconBefore icon icon-newspaper"></i><span class="hidden-xs">Nieuws</span></a></li>
                         <li class="divider"><a href="#"><i class="iconBefore icon icon-sys-help-2 icon-fw"></i><span class="hidden-xs">Over ons</span></a></li>
                         <li class=""><a href="#"><i class="fa fa-envelope iconBefore"></i><span class="hidden-xs">Contact</span></a></li>
                     </ul>
@@ -85,7 +85,7 @@
                 <div class="navbar-collapse collapse " id="navbar-collapse">
                     <ul class="nav navbar-nav">
                         <li class="active nav-item">
-                            <a href="/"><i class="icon icon-home icon-fw icon-lg iconBefore"></i></a>
+                            <a href="/"><i class="si si-home si-fw si-lg iconBefore"></i></a>
                         </li>
                         <li class="nav-item dropdown">
                             <a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"
@@ -96,6 +96,8 @@
                                 <li><a href="#"><i class="iconBefore fa-archive fa"></i>Pro<em>FFF</em> en ligne</a></li>
                                 <li><a href="/Html/FormPage.html">Form page</a></li>
                                 <li><a href="/Html/TablePAge.html">Table page</a></li>
+                                <li><a href="/Html/Partners-Sponsors.html">PArtners - Sponsors</a></li>
+                                <li><a href="/Html/BasicContent.html">Basic Content</a></li>
                             </ul>
                         </li>
                         <li class="nav-item dropdown">
@@ -134,7 +136,7 @@
         <!-- ******CONTENT****** -->
         <div class="content">
             <!-- VZW : BEGIN -->
-            <section class="vzw clearfix">
+            <section class="vzw clearfix DynamicBG" data-backgroundimage="/images/design/OverOns-Fullsize.jpg">
                 <div class="container">
                     <div class="vzw-boxes">
                         <div class="col-sm-4">
@@ -205,37 +207,58 @@
             <!-- MAGAZINE : END -->
             <!-- STUDIEDAG : BEGIN -->
             <section class="studiedag box stats">
-                <div class="container">
-                    <h2>Onze studiedag</h2>
-                    <div class="col-md-3 text-center col-xs-6">
-                        <span class="icon dark-bg large circle"><i class="fa fa-diamond fa-4x"></i></span>
-                        <h3><strong>Ateliers</strong></h3>
-                        <span class="counter" data-to="25" data-speed="5000">25</span>
-                    </div>
-                    <div class="col-md-3 text-center col-xs-6">
-                        <span class="icon dark-bg large circle"><i class="icon icon-learning-assistant icon-4x"></i></span>
-                        <h3>
-                            <strong>
-                                Sprekers
-                            </strong>
-                        </h3>
-                        <span class="counter" data-to="15" data-speed="5000">15</span>
+                <div class="row">
+                    <div class="container">
+                        <h2>Onze studiedag</h2>
+                   
+                        <div class="col-md-3 text-center col-xs-6 CounterBlock">
+                            <span class="fa-stack fa-5x">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-diamond fa-stack-1x fa-inverse"></i>
+                            </span>
 
-
+                            <!--<span class="icon dark-bg large circle"><i class="fa fa-diamond fa-4x"></i></span>-->
+                            <h3><strong>Ateliers</strong></h3>
+                            <span class="counter" data-to="25" data-speed="5000">25</span>
+                        </div>
+                        <div class="col-md-3 text-center col-xs-6 CounterBlock">
+                            <!--<span class="icon dark-bg large circle"><i class="icon icon-learning-assistant icon-4x"></i></span>-->
+                            <span class="si-stack si-5x">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="si si-learning-assistant si-stack-1x si-inverse"></i>
+                            </span>
+                            <h3>
+                                <strong>Sprekers</strong>
+                            </h3>
+                            <span class="counter" data-to="15" data-speed="5000">15</span>
+                        </div>
+                        <div class="col-md-3 text-center col-xs-6 CounterBlock">
+                            <span class="si-stack si-5x">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-users fa-stack-1x fa-inverse"></i>
+                            </span>
+                            <h3><strong>Bezoekers</strong></h3>
+                            <span class="counter" data-to="500" data-speed="5000">0</span>
+                        </div>
+                        <div class="col-md-3 text-center col-xs-6 CounterBlock">
+                            <span class="si-stack si-5x">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="si si-building si-stack-1x si-inverse"></i>
+                            </span>
+                            <h3><strong>Locatie</strong></h3>
+                            <span class="counter" data-to="1" data-speed="5000">1</span>
+                        </div>
+                        <div class="col-md-12 col-xs-12">
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ubi ut eam caperet aut quando? Est enim tanti philosophi tamque nobilis audacter sua decreta defendere. Theophrasti igitur, inquit, tibi liber ille placet de beata vita? Sit enim idem caecus, debilis. Cui Tubuli nomen odio non est? Oratio me istius philosophi non offendit; Sed videbimus. Duo Reges: constructio interrete.
+                            </p>
+                            <p>
+                                <a href="#" class="btn btn-primary btn-large">Ontdek er hier alles over</a>
+                            </p>
+                        </div>
                     </div>
-                    <div class="col-md-3 text-center col-xs-6">
-                        <span class="icon dark-bg large circle"><i class="fa fa-users fa-4x"></i></span>
-                        <h3><strong>Bezoekers</strong></h3>
-                        <span class="counter" data-to="500" data-speed="5000">0</span>
-                    </div>
-                    <div class="col-md-3 text-center col-xs-6">
-                        <span class="icon dark-bg large circle"><i class="icon icon-building icon-4x"></i></span>
-                        <h3><strong>Locatie</strong></h3>
-                        <span class="counter" data-to="1" data-speed="5000">1</span>
-                    </div>
-
                 </div>
-
+           
             </section>
             <!-- STUDIEDAG : END -->
 
@@ -402,7 +425,7 @@
     <script type="text/javascript" src="scripts/bootstrap.min.js"></script>
     <script type="text/javascript" src="scripts/plugins/jquery.countTo.js"></script>
     <script type="text/javascript" src="scripts/Scripts.js"></script>
-
+    <script type="text/javascript" src="scripts/Styling.js"></script>
 
     <div id="topcontrol" title="Scroll Back to Top" style="position: fixed; bottom: 5px; right: 5px; opacity: 1; cursor: pointer;"><i class="fa fa-angle-up"></i></div><span style="border-radius: 3px; text-indent: 20px; width: auto; padding: 0px 4px 0px 0px; text-align: center; font-style: normal; font-variant: normal; font-weight: bold; font-stretch: normal; font-size: 11px; line-height: 20px; font-family: &quot;Helvetica Neue&quot;, Helvetica, sans-serif; color: rgb(255, 255, 255); background: url(&quot;data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMzBweCIgd2lkdGg9IjMwcHgiIHZpZXdCb3g9Ii0xIC0xIDMxIDMxIj48Zz48cGF0aCBkPSJNMjkuNDQ5LDE0LjY2MiBDMjkuNDQ5LDIyLjcyMiAyMi44NjgsMjkuMjU2IDE0Ljc1LDI5LjI1NiBDNi42MzIsMjkuMjU2IDAuMDUxLDIyLjcyMiAwLjA1MSwxNC42NjIgQzAuMDUxLDYuNjAxIDYuNjMyLDAuMDY3IDE0Ljc1LDAuMDY3IEMyMi44NjgsMC4wNjcgMjkuNDQ5LDYuNjAxIDI5LjQ0OSwxNC42NjIiIGZpbGw9IiNmZmYiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIxIj48L3BhdGg+PHBhdGggZD0iTTE0LjczMywxLjY4NiBDNy41MTYsMS42ODYgMS42NjUsNy40OTUgMS42NjUsMTQuNjYyIEMxLjY2NSwyMC4xNTkgNS4xMDksMjQuODU0IDkuOTcsMjYuNzQ0IEM5Ljg1NiwyNS43MTggOS43NTMsMjQuMTQzIDEwLjAxNiwyMy4wMjIgQzEwLjI1MywyMi4wMSAxMS41NDgsMTYuNTcyIDExLjU0OCwxNi41NzIgQzExLjU0OCwxNi41NzIgMTEuMTU3LDE1Ljc5NSAxMS4xNTcsMTQuNjQ2IEMxMS4xNTcsMTIuODQyIDEyLjIxMSwxMS40OTUgMTMuNTIyLDExLjQ5NSBDMTQuNjM3LDExLjQ5NSAxNS4xNzUsMTIuMzI2IDE1LjE3NSwxMy4zMjMgQzE1LjE3NSwxNC40MzYgMTQuNDYyLDE2LjEgMTQuMDkzLDE3LjY0MyBDMTMuNzg1LDE4LjkzNSAxNC43NDUsMTkuOTg4IDE2LjAyOCwxOS45ODggQzE4LjM1MSwxOS45ODggMjAuMTM2LDE3LjU1NiAyMC4xMzYsMTQuMDQ2IEMyMC4xMzYsMTAuOTM5IDE3Ljg4OCw4Ljc2NyAxNC42NzgsOC43NjcgQzEwLjk1OSw4Ljc2NyA4Ljc3NywxMS41MzYgOC43NzcsMTQuMzk4IEM4Ljc3NywxNS41MTMgOS4yMSwxNi43MDkgOS43NDksMTcuMzU5IEM5Ljg1NiwxNy40ODggOS44NzIsMTcuNiA5Ljg0LDE3LjczMSBDOS43NDEsMTguMTQxIDkuNTIsMTkuMDIzIDkuNDc3LDE5LjIwMyBDOS40MiwxOS40NCA5LjI4OCwxOS40OTEgOS4wNCwxOS4zNzYgQzcuNDA4LDE4LjYyMiA2LjM4NywxNi4yNTIgNi4zODcsMTQuMzQ5IEM2LjM4NywxMC4yNTYgOS4zODMsNi40OTcgMTUuMDIyLDYuNDk3IEMxOS41NTUsNi40OTcgMjMuMDc4LDkuNzA1IDIzLjA3OCwxMy45OTEgQzIzLjA3OCwxOC40NjMgMjAuMjM5LDIyLjA2MiAxNi4yOTcsMjIuMDYyIEMxNC45NzMsMjIuMDYyIDEzLjcyOCwyMS4zNzkgMTMuMzAyLDIwLjU3MiBDMTMuMzAyLDIwLjU3MiAxMi42NDcsMjMuMDUgMTIuNDg4LDIzLjY1NyBDMTIuMTkzLDI0Ljc4NCAxMS4zOTYsMjYuMTk2IDEwLjg2MywyNy4wNTggQzEyLjA4NiwyNy40MzQgMTMuMzg2LDI3LjYzNyAxNC43MzMsMjcuNjM3IEMyMS45NSwyNy42MzcgMjcuODAxLDIxLjgyOCAyNy44MDEsMTQuNjYyIEMyNy44MDEsNy40OTUgMjEuOTUsMS42ODYgMTQuNzMzLDEuNjg2IiBmaWxsPSIjYmQwODFjIj48L3BhdGg+PC9nPjwvc3ZnPg==&quot;) 3px 50% / 14px 14px no-repeat rgb(189, 8, 28); position: absolute; opacity: 1; z-index: 8675309; display: none; cursor: pointer; border: none; -webkit-font-smoothing: antialiased;">Bewaren</span><span style="border-radius: 3px; text-indent: 20px; width: 20px; height: 20px; background: url(&quot;data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHdpZHRoPSIzMHB4IiBoZWlnaHQ9IjMwcHgiIHZpZXdCb3g9IjAgMCAzMCAzMCIgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIj4KPGc+CjxwYXRoIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSI0IiBkPSJNMTcsMTcgTDIyLDIyIFogIi8+CjxjaXJjbGUgc3Ryb2tlPSIjZmZmIiBjeD0iMTMiIGN5PSIxMyIgcj0iNiIgZmlsbD0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIzLjUiLz4KPHBhdGggZmlsbD0iI2ZmZiIgZD0iTTAsMCBMOCwwIEw4LDMgTDMsMyBMMyw4IEwwLDggWiIvPgo8cGF0aCBmaWxsPSIjZmZmIiBkPSJNMzAsMjIgTDMwLDMwIEwyMiwzMCBMMjIsMjcgTDI3LDI3IEwyNywyMiBaIi8+CjxwYXRoIGZpbGw9IiNmZmYiIGQ9Ik0zMCwwIEwzMCw4IEwyNyw4IEwyNywzIEwyMiwzIEwyMiwwIFoiLz4KPHBhdGggZmlsbD0iI2ZmZiIgZD0iTTAsMjIgTDMsMjIgTDMsMjcgTDgsMjcgTDgsMzAgTDAsMzBaIi8+CjwvZz4KPC9zdmc+Cg==&quot;) 50% 50% / 14px 14px no-repeat rgba(0, 0, 0, 0.4); position: absolute; opacity: 1; z-index: 8675309; display: none; cursor: pointer; border: none;"></span>
 </body>

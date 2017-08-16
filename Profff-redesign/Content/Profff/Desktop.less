@@ -1,5 +1,5 @@
 ﻿@media (min-width:992px) {
-    .home-page {
+    .homepage {
         .vzw {
             .vzw-boxes {
                 margin-top: 15em;
@@ -53,27 +53,17 @@
         background-repeat: no-repeat;
         height: 80px;
         padding: 5px 25px 5px 120px;
+    
     }
 
     .PageBanner {
-        min-height:170px;
-
-        img {
-            max-width: 100%;
-            z-index: 0;
-        }
+        min-height: 190px;
+        max-height: 190px;
 
         h1.PageTitle {
-            margin-top: -80px;
+            margin-top: 120px;
             z-index: 1000;
             color: @CatskillWhite;
-        }
-    }
-
-    .BodyContent {
-        padding-top:15px;
-        h2 {
-            /*padding-top:0;*/
         }
     }
 
@@ -94,7 +84,7 @@
         }
     }
 
-    .home-page {
+    .homepage {
         h2 {
             padding-top: 12px;
             padding-bottom: 8px;
@@ -112,13 +102,14 @@
         }
 
         .vzw {
-            background: url('../../images/design/sampleImage_01.jpg') 0 -600px no-repeat;
+            background-repeat: no-repeat;
+            background-position: center;
             padding-top: 180px;
+            min-height:420px;
 
             .vzw-boxes {
                 margin-top: 1em;
                 margin-bottom: 1em;
-
                 .vzw-box {
                     margin-left: 2em;
                     margin-right: 2em;
@@ -136,7 +127,7 @@
         }
     }
 
-    .studiedag-page {
+    .StudiedagPage {
         .studiedagAteliers {
 
             .atelierTile {
@@ -164,6 +155,14 @@
             }
 
             .atelierTile:hover .caption {
+            }
+        }
+    }
+
+    .blog-page{
+        article{
+            figure{
+                margin-bottom:1em;
             }
         }
     }
